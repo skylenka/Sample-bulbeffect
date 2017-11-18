@@ -1,0 +1,48 @@
+:root {
+  --light: 0.1;
+  --glow: 5px;
+}
+
+html {
+  font-size: 20px;
+  font-family: 'Lato', sans-serif;
+  --light: 0.9;
+  --blur: 5px;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-image: url("../img/back.jpeg");
+  background-position: center;
+  background-size: cover;
+}
+
+.night {
+  height: 100vh;
+  background-color: black;
+  opacity: calc(1 - var(--light));
+}
+
+.neon {
+  font-size: 4rem;
+  color: #47ff00;
+  position: absolute;
+  left: 5%;
+  bottom: 3%;
+  letter-spacing: .5rem;
+  text-shadow: rgba(255, 255, 255, 0.8) 0 0 calc(5 * var(--blur)), #47ff00 0 0 var(--blur);
+  opacity: var(--light);
+}
+
+div .fa-lightbulb-o {
+  font-size: 6rem;
+}
+
+input {
+  position: absolute;
+  top:10%;
+  left: 10%;
+  width: 300px;
+  height: 50px;
+}

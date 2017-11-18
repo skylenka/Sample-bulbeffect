@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bulb effect</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700&amp;subset=latin-ext" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+<div class="night"></div>
+ <div class="neon"><i class="fa fa-lightbulb-o" aria-hidden="true"></i>Na <span>10</span>%</div>
+ <input type="range" name="neon" min="1" max="100" value="10">
+<script>
+  var input = document.querySelector("input");
+  input.addEventListener("change", updateValue);
+  input.addEventListener("mousemove", updateValue)
+
+  function updateValue() {
+  console.log(this.value);
+  var percent = document.querySelector('span')
+  percent.textContent = this.value;
+  document.documentElement.style.setProperty("--light", this.value / 100)
+  document.documentElement.style.setProperty("--blur", this.value / 4 + "px")
+  }
+</script>
+</body>
+</html>
